@@ -1,0 +1,164 @@
+:root {
+    --wheat: #E9D3A2ff;
+    --mountbatten-pink: #8D7B91ff;
+    --barn-red: #7D0703ff;
+    --steel-teal: #44909Aff;
+    --gunmetal: #08242Cff;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth
+}
+
+body {
+    background: var(--mountbatten-pink);
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: center;
+}
+
+.navbar li {
+    list-style: none;
+}
+
+.navbar li a {
+    color: var(--wheat);
+    text-decoration: none;
+    font-size: 1.7em;
+    padding: 5px 15px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    font-family: 'Quicksand', sans-serif;
+    color: var(--wheat);
+    width: 100%;
+}
+
+.sticky {
+    background: var(--steel-teal);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0px 0px 10px 0px rgb(19, 19, 19);
+}
+
+.top-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 30px 0;
+    height: 100vh;
+    flex-wrap: wrap;
+}
+
+.slideshow {
+    position: relative;
+    margin: auto;
+}
+
+.slide img {
+    width: auto;
+    height: 300px;
+    border-radius: 25px;
+    margin: 0 35px;
+}
+
+.slide {
+    display: none;
+}
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+.welcome p {
+    font-size: 1.8em;
+    color: var(--wheat);
+    font-family: 'Quicksand', sans-serif;
+    margin: 0 35px;
+}
+
+.welcome {
+    width: 620px;
+    min-width: 430px;
+    min-height: 150px;
+    max-height: 160px;
+}
+
+.check-out {
+    background: var(--mountbatten-pink);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.check-out a {
+    text-decoration: none;
+}
+
+.check-out span:hover {
+    border-bottom: 1px solid var(--steel-teal);
+    transition: ease-out;
+    transition-duration: 0.15s;
+}
+
+.card {
+    display: flex;
+    background: var(--gunmetal);
+    margin: 15px 35px;
+    height: fit-content;
+    align-items: center;
+    width: auto;
+    flex-direction: column;
+    padding: 50px;
+    border-radius: 35px;
+}
+
+.about {
+    font-size: 0.8em;
+}
+
+.card span {
+    font-size: 2.5em;
+    text-transform: uppercase;
+    color: var(--wheat);
+    font-family: 'Quicksand', sans-serif;
+}
+
+.imgg {
+    width: 30vw;
+    height: auto;
+    margin: 15px 35px;
+}

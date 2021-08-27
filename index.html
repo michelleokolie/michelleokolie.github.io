@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Anime and Manga</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="navbar">
+        <ul>
+
+            <li>
+                <a href="manga.html">Manga</a>
+            </li>
+            <li>
+                <a href="anime.html">Anime</a>
+            </li>
+
+        </ul>
+    </div>
+    <div class="title">
+        <h1>
+            Anime and Manga
+        </h1>
+    </div>
+    <div class="main">
+
+        <div class="top-container">
+            <div class="slideshow">
+                <div class="slide fade">
+                    <img src="background.jpg" alt="Man throwing object (anime)">
+                </div>
+                <div class="slide fade">
+                    <img src="https://wallpaperaccess.com/full/10769.jpg" alt="">
+                </div>
+            </div>
+            <div class="welcome">
+                <p>
+                    Welcome to Anime and Manga, where we get you all the latest animes and mangas. Our site gives you access to the best places to find the best mangas and anime. Check us out and have fun!
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="check-out">
+        <a href="manga.html">
+            <div class="manga card">
+                <img class="imgg" src="https://i.pinimg.com/originals/30/82/c0/3082c0b80fb45f5f8f8d1cd8793480c4.png" alt="">
+                <span>Manga</span>
+            </div>
+        </a>
+        <a href="anime.html">
+            <div class="anime card">
+                <img class="imgg" src="h.png" alt="">
+                <span>Anime</span>
+            </div>
+        </a>
+        <a href="about.html">
+            <div class="about card">
+                <img class="imgg" src="l.png" alt="">
+                <span>Learn more about us</span>
+            </div>
+        </a>
+    </div>
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("slide");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1
+            }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 2000);
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>
