@@ -27,7 +27,7 @@ mangaInput.addEventListener('keyup', (e) => {
                 "method": "GET",
                 "headers": {
                     "x-rapidapi-host": "jikan1.p.rapidapi.com",
-                    "x-rapidapi-key": api_key
+                    "x-rapidapi-key": "f35818e12cmshb49b55d59e713f5p1e33aajsn34a91ad2f397"
                 }
             })
             .then(response => response.json())
