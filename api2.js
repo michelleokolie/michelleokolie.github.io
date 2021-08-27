@@ -3,6 +3,9 @@ let searchResults = document.getElementById("search-results")
 let mangaInputNew;
 let output = document.getElementById("search-results");
 
+const dotenv = require('dotenv').config();
+const api_key = process.env.API_KEY
+
 let createEl = (el) => {
     return document.createElement(el);
 }
@@ -27,7 +30,7 @@ mangaInput.addEventListener('keyup', (e) => {
                 "method": "GET",
                 "headers": {
                     "x-rapidapi-host": "jikan1.p.rapidapi.com",
-                    "x-rapidapi-key": "f35818e12cmshb49b55d59e713f5p1e33aajsn34a91ad2f397"
+                    "x-rapidapi-key": api_key
                 }
             })
             .then(response => response.json())
