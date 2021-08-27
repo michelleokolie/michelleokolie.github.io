@@ -3,9 +3,6 @@ let searchResults = document.getElementById("search-results")
 let mangaInputNew;
 let output = document.getElementById("search-results");
 
-const dotenv = require('dotenv').config();
-const api_key = process.env.API_KEY
-
 let createEl = (el) => {
     return document.createElement(el);
 }
