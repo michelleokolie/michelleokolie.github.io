@@ -1,0 +1,152 @@
+@startchen
+left to right direction
+
+entity Player {
+    playerID
+    playerPosition
+    jerseyNum
+    name {
+        firstName
+        lastName
+    }
+    birthdate
+    school
+    country
+    height
+    weight
+    seasonsPlayed
+    isActivePlayer
+}
+
+entity Game {
+    seasonID
+    gameID
+    gameDate
+    attendance
+
+    homeTeamID
+    awayTeamID
+
+    didHomeTeamWin
+    didAwayTeamWin
+}
+
+' Add gameID To relationship
+entity Official {
+    officialID
+    name {
+        firstName
+        lastName
+    }
+    jerseyNum
+
+}
+
+
+entity Team {
+    teamID
+    teamName
+    teamCity
+    teamState
+    yearFounded
+    arena
+    arenaCapacity
+
+}
+
+
+relationship Plays {
+
+}
+
+relationship Shoots {
+
+}
+
+
+relationship Assists {
+    playerWhoWasAssisted
+
+}
+
+relationship Rebounds {
+
+}
+
+relationship Steals {
+
+}
+
+relationship Blocks {
+
+}
+
+relationship Turnovers{
+
+}
+
+relationship isMemberOf {
+
+}
+
+relationship Officiate {
+
+}
+
+relationship Gets_Stats {
+    fieldGoalsMade
+    fieldGoalsAttempted
+    fieldGoalPercentage <<derived>>
+
+    threePointersMade
+    threePointersAttempted
+    threePointerPercentage <<derived>>
+
+    freeThrowsMade
+    freeThrowsAttempted
+    freeThrowPercentage <<derived>>
+
+    offensiveRebounds
+    defensiveRebounds
+
+    rebounds <<derived>>
+    assists
+    steal
+    blocks
+    turnovers
+
+    pointsTotal <<derived>>
+}
+
+
+Player -M- Plays
+Plays =M= Game 
+
+Player -M- Shoots
+Shoots =M= Game 
+
+Player -M- Rebounds
+Rebounds -M- Game 
+
+Player -M- Steals
+Steals -M- Game 
+
+Player -M- Blocks
+Blocks -M- Game 
+
+Player -M- Turnovers
+Turnovers -M- Game 
+
+Player -M- Assists
+Assists -M- Game 
+
+Player =M= isMemberOf
+isMemberOf =M= Team
+
+Official =M= Officiate
+Officiate =M= Game
+
+Team =M= Gets_Stats
+Gets_Stats =M- Game
+
+@endchen
