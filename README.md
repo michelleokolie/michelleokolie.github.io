@@ -1,1 +1,1 @@
-# Manga Anime API Personal Project
+# Coding-Kickoff-2024
