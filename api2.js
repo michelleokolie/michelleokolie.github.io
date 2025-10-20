@@ -23,22 +23,16 @@ mangaInput.addEventListener('input', () => {
 
 mangaInput.addEventListener('keyup', (e) => {
     if (e.key === 'Enter') {
-        fetch("https://jikan1.p.rapidapi.com/search/anime?q=" + mangaInputNew, {
-                "method": "GET",
-                "headers": {
-                    "x-rapidapi-host": "jikan1.p.rapidapi.com",
-                    "x-rapidapi-key": "f35818e12cmshb49b55d59e713f5p1e33aajsn34a91ad2f397"
-                }
-            })
+        fetch("https://api.jikan.moe/v4/anime?q=" + mangaInputNew)
             .then(response => response.json())
             .then(data => {
                 searchResults.innerHTML = "";
-                data.results.map((el) => {
+                data.data.map((el) => {
                     searchResults.innerHTML += `
                     <div class="search-result-output">
-                    <img id="s-img" src="${el.image_url}">
+                    <img id="s-img" src="${el.images.jpg.image_url}">
                     <p id="s-title">${el.title}</p>
-                    <p id="s-desc">${el.synopsis}</p>
+                    <p id="s-desc">${el.synopsis ? el.synopsis : "No description available."}</p>
                     <a id="s-link" href="${el.url}">Find out more about ${el.title}</a>
                     </div>
                     <hr id="divider"/>
